@@ -41,6 +41,7 @@ const Note = ({data,index,isOpen,setIsOpen}) => {
             overlayRef.current.style.backgroundColor = 'none'; 
             overlayRef.current.style.width = '0'
             overlayRef.current.style.height = '0'
+            colorPickerRef.current.style.visibility = 'hidden'
         }
         
     }
@@ -101,6 +102,7 @@ const Note = ({data,index,isOpen,setIsOpen}) => {
             overlayRef.current.style.right = '0'
             overlayRef.current.style.width = '100vw'
             overlayRef.current.style.height = '100%'
+            colorPickerRef.current.style.visibility = 'visible'
         }
     }
 
@@ -123,13 +125,26 @@ const Note = ({data,index,isOpen,setIsOpen}) => {
         resize:'none'
     }
 
+    const handleVisble = () =>{
+        if(noteRef.current.getBoundingClientRect().width < 600){
+            colorPickerRef.current.style.visibility = 'visible'
+        }
+    }
+
+    const handleHidden = () =>{
+        if(noteRef.current.getBoundingClientRect().width < 600){
+            colorPickerRef.current.style.visibility = 'hidden'
+        }
+        
+    }
+
   return (<>
-    <div style={{position:'absolute'}} ref={overlayRef} onClick={closeModal}></div>
+    <div style={{position:'absolute'}} ref={overlayRef} onClick={closeModal} ></div>
     <BoxContainer ref={parentRef} >
         
         <BoxInner
             className='box-inner'
-            onClick={(e)=>handleClick(e)} 
+            onClick={(e)=>handleClick(e)} onMouseOver={handleVisble} onMouseLeave={handleHidden}
             ref={noteRef} 
             sx={style}> 
             <Typography variant="h6" color="inherit">
@@ -153,8 +168,8 @@ const Note = ({data,index,isOpen,setIsOpen}) => {
                 
 
             </Typography>
-            <Box sx={{display:'flex',justifyContent:'space-between'}}> 
-                <div ref={colorPickerRef} style={{display:'inline-block'}}>
+            <Box sx={{display:'flex', justifyContent:'space-between'}}> 
+                <div className='color-and-delete' ref={colorPickerRef} style={{display:'inline-block', visibility:'hidden'}}>
                     <ColorButtonInNote id={data.id}/>
                     <IconButton onClick={()=>dispatch(deleteNote({id:data.id}))}>
                         <DeleteIcon sx={{color:fontColor}}/>

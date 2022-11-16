@@ -63,14 +63,13 @@ textarea{
 }
 
 .box-inner{
-  width:auto;
-  transition:width 2s ease;
-  -webkit-transition:width 2s;
+  width:auto; 
 }
  
 .nav-bar{
   z-index: 50;
 }
- 
+
+  
  
  
