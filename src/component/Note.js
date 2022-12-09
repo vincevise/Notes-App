@@ -112,8 +112,7 @@ const Note = ({data,index,isOpen,setIsOpen}) => {
     let textColor = theme.palette.text.primary;
     let fontColor = theme.palette.text.secondary; 
     const style = {
-        backgroundColor: data.color ? data.color : bgColor,
-        border:`1px solid ${fontColor}`,
+        backgroundColor: data.color ? data.color : bgColor, 
         transition:'width 2s'
     }
     const inputStyle = {

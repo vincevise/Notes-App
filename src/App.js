@@ -44,9 +44,10 @@ function App() {
       <SearchContext.Provider value={{isSearch,setIsSearch}}>
       <CssBaseline/>
       <BrowserRouter>
-        {/* <NavBar/>   */}
+        <NavBar/>  
         <Routes>
           <Route path="/" element={<Home/>}/> 
+          <Route path="/Notes-app" element={<Home/>}/> 
           <Route path="/search" element={<Search/>}/> 
         </Routes> 
       </BrowserRouter>

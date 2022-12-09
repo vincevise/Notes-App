@@ -1,20 +1,7 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 let initialState = {
-    data : [
-    {
-        id:'1',
-        title:'Notes app',
-        content:'notes app with react,redux,router-dom and material-ui',
-        color:'#e84118'
-    },
-    {
-        id:'2',
-        title:'a app',
-        content:'making a app with react,redu,router-dom and material-ui aadfasdfasdf asdfasdfasdasdf asdfasdfa adfasd adfasd asd adfsq sd asdfqw wq',
-        color:'#fbc531'
-    }
-]
+    data : []
 
 }
 
@@ -52,7 +39,8 @@ const notesSlice = createSlice({
     }
 })
 
-export const notesData = (state) => state.notes;
+export const 
+notesData = (state) => state.notes;
 
 export const {addNote,deleteNote,changeColor,updateNote,addNotes,searchData} = notesSlice.actions;
 
