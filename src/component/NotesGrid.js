@@ -50,22 +50,29 @@ const NotesGrid = () => {
     <CustomContainer sx={customGrid}>
       <CustomDiv> {
         data?.map((x,i)=>{
-          if(i%4===0) return (<Note setIsOpen={setIsOpen} isOpen={isOpen} className='note' key={x.id} data={x} index={i}/>)
+          if(i%4===0) {
+            return <Note setIsOpen={setIsOpen} isOpen={isOpen} className='note' key={x.id} data={x} index={i}/>
+          }else{
+            return null
+          }
         } )} 
       </CustomDiv> 
       <CustomDiv> {
         data?.map((x,i)=>{
           if(i%4===1) return (<Note setIsOpen={setIsOpen} isOpen={isOpen} className='note' key={x.id} data={x} index={i}/>)
+          else return null
         } )} 
       </CustomDiv> 
       <CustomDiv> {
         data?.map((x,i)=>{
           if(i%4===2) return (<Note setIsOpen={setIsOpen} isOpen={isOpen} className='note' key={x.id} data={x} index={i}/>)
+          else return null
         } )} 
       </CustomDiv> 
       <CustomDiv> {
         data?.map((x,i)=>{
           if(i%4===3) return (<Note setIsOpen={setIsOpen} isOpen={isOpen} className='note' key={x.id} data={x} index={i}/>)
+          else return null
         } )} 
       </CustomDiv>
     </CustomContainer>
