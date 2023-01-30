@@ -20,7 +20,7 @@ const Note = ({data,index,isOpen,setIsOpen}) => {
     let [content,setContent] = useState(data.content)
     const dispatch = useDispatch()
     const [height,setHeight] = useState(0)
-    const [mid,setMid] = useState(0)
+    // const [mid,setMid] = useState(0)
 
     
       const closeModal = () => { 
@@ -56,14 +56,14 @@ const Note = ({data,index,isOpen,setIsOpen}) => {
         if(!isOpen){
             setHeight(noteRef.current.getBoundingClientRect().height) 
             // console.log(window.innerHeight,height);
-            setMid( window.innerHeight/2 ) 
+            // setMid( window.innerHeight/2 ) 
         }
         if(isOpen){ 
             parentRef.current.style.height = height +'px';  
         } 
         
 
-    },[isOpen])
+    },[isOpen,height])
 
     const handleClick = (e) =>{ 
         

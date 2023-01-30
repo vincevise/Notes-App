@@ -6,12 +6,10 @@ import CircleIcon from '@mui/icons-material/Circle';
 import LensOutlinedIcon from '@mui/icons-material/LensOutlined';
 import { useContext } from 'react'; 
 import { ColorPickerContext } from './AddNote';
-import { useDispatch } from 'react-redux';
 
 
 const ColorButton = () => {
     const setColor = useContext(ColorPickerContext)
-    const dispatch = useDispatch()
     const theme = useTheme()
     let bgColor = theme.palette.background.main; 
     let fontColor = theme.palette.text.secondary;

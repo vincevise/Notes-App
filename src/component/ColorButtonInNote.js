@@ -1,18 +1,14 @@
 import { Box, IconButton, Menu, MenuItem, Tooltip } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
 import { useTheme } from '@emotion/react';
 import CircleIcon from '@mui/icons-material/Circle'; 
 import LensOutlinedIcon from '@mui/icons-material/LensOutlined';
-import { useContext } from 'react'; 
-import { ColorPickerContext } from './AddNote';
 import { useDispatch } from 'react-redux';
 import { changeColor } from '../features/notesSlice';
-import { SearchContext } from '../App';
 
 
 const ColorButtonInNote = ({id}) => { 
-  const {isSearch} = useContext(SearchContext)
     const dispatch = useDispatch()
     const theme = useTheme()
     let bgColor = theme.palette.background.main; 

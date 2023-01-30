@@ -4,9 +4,7 @@ import Note from './Note'
 import {useSelector} from 'react-redux';
 import { notesData } from '../features/notesSlice';
 import { navBarData } from '../features/navbarSlice';
-import { useLocation } from 'react-router-dom';
 import { SearchContext } from '../App';
-import { useEffect } from 'react';
 
 const NotesGrid1 = () => {
   const navData = useSelector(navBarData);   

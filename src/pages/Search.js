@@ -3,7 +3,6 @@ import { styled } from '@mui/system';
 
 import React from 'react' 
 import NavBar from '../component/Navbar';
-import NotesGrid from '../component/NotesGrid'
 import NotesGrid1 from '../component/NotesGrid1';
 
 const Search = () => {
