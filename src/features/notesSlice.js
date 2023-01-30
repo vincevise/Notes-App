@@ -1,7 +1,56 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 let initialState = {
-    data : []
+    data : [
+    {
+        id:'1',
+        title:'Node js',
+        content:'notes app with react,redux,router-dom and material-ui',
+        color:'#e84118'
+    },
+    {
+        id:'2',
+        title:'a app',
+        content:'making a app with react,redu,router-dom and material-ui aadfasdfasdf asdfasdfasdasdf asdfasdfa adfasd adfasd asd adfsq sd asdfqw wq',
+        color:'#fbc531'
+    },
+    {
+        id:'3',
+        title:'Notes app',
+        content:'notes app with react,redux,router-dom and material-ui',
+        color:'#e84118'
+    },
+    {
+        id:'4',
+        title:'a app',
+        content:'making a app with react,redu,router-dom and material-ui aadfasdfasdf asdfasdfasdasdf asdfasdfa adfasd adfasd asd adfsq sd asdfqw wq',
+        color:'#fbc531'
+    },
+    {
+        id:'5',
+        title:'Notes app',
+        content:'notes app with react,redux,router-dom and material-ui',
+        color:'#e84118'
+    },
+    {
+        id:'6',
+        title:'a app',
+        content:'making a app with react,redu,router-dom and material-ui aadfasdfasdf asdfasdfasdasdf asdfasdfa adfasd adfasd asd adfsq sd asdfqw wq',
+        color:'#fbc531'
+    },
+    {
+        id:'7',
+        title:'Notes app',
+        content:'notes app with react,redux,router-dom and material-ui',
+        color:'#e84118'
+    },
+    {
+        id:'8',
+        title:'a app',
+        content:'making a app with react,redu,router-dom and material-ui aadfasdfasdf asdfasdfasdasdf asdfasdfa adfasd adfasd asd adfsq sd asdfqw wq',
+        color:'#fbc531'
+    }
+]
 
 }
 

@@ -14,12 +14,12 @@ const Search = () => {
   const style = { 
       bgcolor:`${bgColor}`,
       color:`${textColor}`,
-      paddingY:'30px',  
+      paddingY:'90px',  
       paddingX:'30px',  
       display:'flex', 
       flexDirection:'column',
       alignItems:'center', 
-      height:'calc(100vh - 65px)'
+      height:' 100vh '
   } 
   return (<>
     <NavBar/>

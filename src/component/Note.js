@@ -8,7 +8,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { deleteNote, updateNote } from '../features/notesSlice';
 import { useDispatch } from 'react-redux';
 import ColorButtonInNote from './ColorButtonInNote';
-import zIndex from '@mui/material/styles/zIndex';
 
 const Note = ({data,index,isOpen,setIsOpen}) => {
     // let [isOpen,setIsOpen] = useState(false)
@@ -30,14 +29,14 @@ const Note = ({data,index,isOpen,setIsOpen}) => {
         if(isOpen){
             setIsOpen(!isOpen) 
             let currentObj = noteRef.current.style
-            currentObj.position = 'relative'
+            currentObj.position = 'static'
             currentObj.top ='auto'
             currentObj.width =  'auto'; 
             console.log(currentObj.zIndex)
             currentObj.zIndex =  '0'; 
             console.log(currentObj.zIndex)
             currentObj.boxShadow = 'none'  
-            overlayRef.current.style.zIndex = '1'
+            overlayRef.current.style.zIndex = '0'
             overlayRef.current.style.backgroundColor = 'none'; 
             overlayRef.current.style.width = '0'
             overlayRef.current.style.height = '0'
@@ -70,7 +69,10 @@ const Note = ({data,index,isOpen,setIsOpen}) => {
         
         e.stopPropagation()
         e.preventDefault()   
-        let nots = ['svg','path','BUTTON','LI'] 
+        console.log(parentRef.current.getBoundingClientRect())
+        console.log(parentRef.current.getBoundingClientRect())
+        console.log(noteRef.current.getBoundingClientRect())
+        let nots = ['svg','path','BUTTON','LI']  
         let iffs = [!isOpen, 
             !nots.includes(e.target.nodeName),
             !e.target.classList.contains('MuiBackdrop-root'),
@@ -101,7 +103,7 @@ const Note = ({data,index,isOpen,setIsOpen}) => {
             overlayRef.current.style.top = '0'
             overlayRef.current.style.right = '0'
             overlayRef.current.style.width = '100vw'
-            overlayRef.current.style.height = '100%'
+            overlayRef.current.style.height = '100vh'
             colorPickerRef.current.style.visibility = 'visible'
         }
     }
@@ -112,7 +114,8 @@ const Note = ({data,index,isOpen,setIsOpen}) => {
     let textColor = theme.palette.text.primary;
     let fontColor = theme.palette.text.secondary; 
     const style = {
-        backgroundColor: data.color ? data.color : bgColor, 
+        backgroundColor: data.color ? data.color : bgColor,
+        border:`1px solid ${fontColor}`,
         transition:'width 2s'
     }
     const inputStyle = {
@@ -138,7 +141,7 @@ const Note = ({data,index,isOpen,setIsOpen}) => {
     }
 
   return (<>
-    <div style={{position:'absolute'}} ref={overlayRef} onClick={closeModal} ></div>
+    
     <BoxContainer ref={parentRef} >
         
         <BoxInner
@@ -182,6 +185,7 @@ const Note = ({data,index,isOpen,setIsOpen}) => {
             
         </BoxInner>
     </BoxContainer>
+    <div style={{position:'fixed'}} ref={overlayRef} onClick={closeModal} ></div>
     </>
   )
 }
